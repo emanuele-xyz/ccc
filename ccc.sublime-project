@@ -1,18 +1,18 @@
 {
-	"folders":
-	[
-		{
-			"path": ".",
-			"folder_exclude_patterns": ["build"]
-		}
-	],
-	"build_systems":
-	[
-		{
-			"name": "compile",
-			"working_dir": "$project_path",
-			"cmd": "build.bat",
-			"file_regex": "^(.*)\\((\\d+),?(\\d+)?\\)\\s?:\\s([^\n]+)",
-		}
-	]
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["build"]
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "compile",
+            "working_dir": "$project_path",
+            "cmd": "build.bat",
+            "file_regex": "^(.*)\\((\\d+),?(\\d+)?\\)\\s?:\\s([^\n]+)",
+        }
+    ]
 }
