@@ -8,5 +8,7 @@ int main(void)
 {
     puts("Hello!");
 
+    ccc_crash();
+
     return 0;
 }
