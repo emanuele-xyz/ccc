@@ -1,2 +1,6 @@
-*.sublime-workspace
-build/**
+# visual studio related stuff
+.vs/**
+# build output
+bin/**
+bin-int/**
+
