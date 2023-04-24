@@ -10,7 +10,7 @@ void* ccc_alloc(u64 size)
     return ptr;
 }
 
-void  ccc_free(void* ptr)
+void ccc_free(void* ptr)
 {
     free(ptr);
 }

@@ -14,7 +14,7 @@ void* ccc_fstack_init(u64 size, u64 capacity)
 
 void ccc_fstack_fini(void* s)
 {
-    ccc_free(s);
+    ccc_free(((u64*)(s)) - FSTACK_DATA_OFFSET);
 }
 
 void ccc_fstack_push(void* s, void* in)
