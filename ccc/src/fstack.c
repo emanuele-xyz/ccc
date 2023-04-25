@@ -4,17 +4,17 @@
 
 void* ccc_fstack_init(u64 size, u64 capacity)
 {
-    u64 fields_size = FSTACK_DATA_OFFSET * sizeof(u64);
+    u64 fields_size = CCC_FSTACK_DATA * sizeof(u64);
     u64* data = ccc_alloc(fields_size + size * capacity);
-    data[FSTACK_SIZE_OFFSET] = size;
-    data[FSTACK_CAPACITY_OFFSET] = capacity;
-    data[FSTACK_COUNT_OFFSET] = 0;
-    return data + FSTACK_DATA_OFFSET;
+    data[CCC_FSTACK_SIZE] = size;
+    data[CCC_FSTACK_CAPACITY] = capacity;
+    data[CCC_FSTACK_COUNT] = 0;
+    return data + CCC_FSTACK_DATA;
 }
 
 void ccc_fstack_fini(void* s)
 {
-    ccc_free(((u64*)(s)) - FSTACK_DATA_OFFSET);
+    ccc_free(((u64*)(s)) - CCC_FSTACK_DATA);
 }
 
 void ccc_fstack_push(void* s, void* in)

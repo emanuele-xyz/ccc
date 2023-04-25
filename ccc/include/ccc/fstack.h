@@ -19,15 +19,15 @@
 
 typedef enum fstack_field
 {
-    FSTACK_SIZE_OFFSET,
-    FSTACK_CAPACITY_OFFSET,
-    FSTACK_COUNT_OFFSET,
-    FSTACK_DATA_OFFSET,
+    CCC_FSTACK_SIZE,
+    CCC_FSTACK_CAPACITY,
+    CCC_FSTACK_COUNT,
+    CCC_FSTACK_DATA,
 } fstack_field;
 
-#define ccc_fstack_size(s)     (((u64*)(s) - FSTACK_DATA_OFFSET)[FSTACK_SIZE_OFFSET])
-#define ccc_fstack_capacity(s) (((u64*)(s) - FSTACK_DATA_OFFSET)[FSTACK_CAPACITY_OFFSET])
-#define ccc_fstack_count(s)    (((u64*)(s) - FSTACK_DATA_OFFSET)[FSTACK_COUNT_OFFSET])
+#define ccc_fstack_size(s)     (((u64*)(s) - CCC_FSTACK_DATA)[CCC_FSTACK_SIZE])
+#define ccc_fstack_capacity(s) (((u64*)(s) - CCC_FSTACK_DATA)[CCC_FSTACK_CAPACITY])
+#define ccc_fstack_count(s)    (((u64*)(s) - CCC_FSTACK_DATA)[CCC_FSTACK_COUNT])
 
 void* ccc_fstack_init(u64 size, u64 capacity);
 void ccc_fstack_fini(void* s);
