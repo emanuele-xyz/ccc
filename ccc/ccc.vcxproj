@@ -92,6 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\log.c" />
     <ClCompile Include="src\alloc.c" />
     <ClCompile Include="src\fstack.c" />
     <ClCompile Include="src\main.c" />
@@ -102,8 +103,10 @@
     <ClInclude Include="include\ccc\clamp.h" />
     <ClInclude Include="include\ccc\compilers.h" />
     <ClInclude Include="include\ccc\fstack.h" />
+    <ClInclude Include="include\ccc\log.h" />
     <ClInclude Include="include\ccc\min_max.h" />
     <ClInclude Include="include\ccc\types.h" />
+    <ClInclude Include="include\ccc\win32.h" />
     <ClInclude Include="src\main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
