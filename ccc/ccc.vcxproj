@@ -99,6 +99,7 @@
   <ItemGroup>
     <ClInclude Include="include\ccc\alloc.h" />
     <ClInclude Include="include\ccc\asserts.h" />
+    <ClInclude Include="include\ccc\clamp.h" />
     <ClInclude Include="include\ccc\compilers.h" />
     <ClInclude Include="include\ccc\fstack.h" />
     <ClInclude Include="include\ccc\min_max.h" />

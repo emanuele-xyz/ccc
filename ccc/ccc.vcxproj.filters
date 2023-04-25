@@ -47,5 +47,8 @@
     <ClInclude Include="include\ccc\min_max.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\ccc\clamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
