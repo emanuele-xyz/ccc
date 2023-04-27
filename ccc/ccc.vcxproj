@@ -102,12 +102,16 @@
     <ClInclude Include="include\ccc\asserts.h" />
     <ClInclude Include="include\ccc\clamp.h" />
     <ClInclude Include="include\ccc\compilers.h" />
+    <ClInclude Include="include\ccc\errors_asserts.h" />
     <ClInclude Include="include\ccc\fstack.h" />
     <ClInclude Include="include\ccc\log.h" />
     <ClInclude Include="include\ccc\min_max.h" />
     <ClInclude Include="include\ccc\types.h" />
     <ClInclude Include="include\ccc\win32.h" />
     <ClInclude Include="src\main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\ccc\errors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -59,5 +59,11 @@
     <ClInclude Include="include\ccc\win32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\ccc\errors_asserts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\ccc\errors.h" />
   </ItemGroup>
 </Project>

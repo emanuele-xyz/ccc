@@ -1,16 +1,39 @@
 #include <ccc/alloc.h>
+#include <ccc/compilers.h>
 #include <ccc/asserts.h>
 
+#if defined(CCC_MSVC)
+#define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
+#include <crtdbg.h>
+#else
+#include <stdlib.h>
+#endif
 
-void* ccc_alloc(u64 size)
+ccc_err ccc_alloc(u64 size, void** out)
 {
-    void* ptr = calloc(1, size);
-    ccc_assert(ptr);
-    return ptr;
+	*out = calloc(1, size);
+	if (*out) return CCC_OK;
+	else return CCC_ERR_ALLOC_FAIL;
 }
 
-void ccc_free(void* ptr)
+ccc_err ccc_free(void** in)
 {
-    free(ptr);
+	if (*in)
+	{
+		free(*in);
+		return CCC_OK;
+	}
+	else
+	{
+		return CCC_ERR_CANT_FREE;
+	}
+}
+
+void ccc_check_for_leaks_on_exit(void)
+{
+	#if defined(CCC_MSVC)
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	#else
+	#endif
 }

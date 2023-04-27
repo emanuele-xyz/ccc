@@ -1,12 +1,11 @@
 #pragma once
 
 #include <ccc/types.h>
+#include <ccc/errors.h>
 
-/*
-    Memory allocation and deallocation functions
-    Crash on memory allocation failure
-    All memory allocated is zero initialized
-*/
+// allocate size bytes of memory and zero initialize it
+ccc_err ccc_alloc(u64 size, void** out);
+ccc_err ccc_free(void** in);
 
-void* ccc_alloc(u64 size);
-void  ccc_free(void* ptr);
+// display memory-leak report when the app exits
+void ccc_check_for_leaks_on_exit(void);
