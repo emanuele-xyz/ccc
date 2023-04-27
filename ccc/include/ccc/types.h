@@ -47,6 +47,9 @@ typedef u16 b16;
 typedef u32 b32;
 typedef u64 b64;
 
+#define CCC_T 1
+#define CCC_F 0
+
 ccc_static_assert(sizeof(b8)  == 1);
 ccc_static_assert(sizeof(b16) == 2);
 ccc_static_assert(sizeof(b32) == 4);
