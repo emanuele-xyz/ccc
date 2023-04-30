@@ -18,10 +18,10 @@ int main(void)
 
 	ccc_err err = CCC_OK;
 
-	u64 capacity = 8;
+	u64 cap = 8;
 	i32* s = 0;
-	err = ccc_fstack_init(sizeof(i32), capacity, &s);
-	for (i32 i = 0; i < capacity + 1; i++)
+	err = ccc_fstack_init(sizeof(i32), cap, &s);
+	for (i32 i = 0; i < (i32)cap + 1; i++)
 	{
 		err = ccc_fstack_push(s, &i);
 		u64 size = ccc_fstack_size(s);
@@ -31,7 +31,7 @@ int main(void)
 		printf("size:%llu - capacity:%llu - count:%llu\n", size, capacity, count);
 	}
 
-	for (i32 i = 0; i < capacity + 1; i++)
+	for (i32 i = 0; i < (i32)cap + 1; i++)
 	{
 		{
 			i32 a = 0;
