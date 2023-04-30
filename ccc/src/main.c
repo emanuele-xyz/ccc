@@ -5,8 +5,31 @@
 #include <ccc/types.h>
 #include <ccc/alloc.h>
 #include <ccc/fstack.h>
+#include <ccc/fqueue.h>
 #include <ccc/min_max.h>
 #include <ccc/clamp.h>
+
+void test_fqueue(void)
+{
+	ccc_err err = CCC_OK;
+
+	i32* q = 0;
+	u64 cap = 8;
+	{
+		err = ccc_fqueue_init(sizeof(*q), cap, &q);
+		printf("queue initialized: %s\n", ccc_err_desc(err));
+		u64 elem_size = ccc_fqueue_elem_size(q);
+		u64 capacity = ccc_fqueue_capacity(q);
+		u64 start = ccc_fqueue_start(q);
+		u64 length = ccc_fqueue_length(q);
+		printf("elem_size %llu - capacity %llu - start %llu - length %llu\n", elem_size, capacity, start, length);
+	}
+
+	{
+		ccc_fqueue_fini(q);
+		printf("queue finalized\n");
+	}
+}
 
 int main(void)
 {
@@ -75,6 +98,8 @@ int main(void)
 		i32 v2 = 7;
 		printf("clamp(%d,%d,%d)=%d\n", v2, lo, hi, ccc_clamp(v2, lo, hi));
 	}
+
+	test_fqueue();
 
 	return 0;
 }

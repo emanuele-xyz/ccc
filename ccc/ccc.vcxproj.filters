@@ -30,6 +30,9 @@
     <ClCompile Include="src\errors.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\fqueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ccc\alloc.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\ccc\errors_asserts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ccc\fqueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
