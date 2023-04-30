@@ -92,6 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\errors.c" />
     <ClCompile Include="src\log.c" />
     <ClCompile Include="src\alloc.c" />
     <ClCompile Include="src\fstack.c" />
