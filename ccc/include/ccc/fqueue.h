@@ -23,8 +23,8 @@ typedef struct ccc_fqueue
 
 #define ccc_fqueue_elem_size(q) (((ccc_fqueue*)(q) - 1)->elem_size)
 #define ccc_fqueue_capacity(q)  (((ccc_fqueue*)(q) - 1)->capacity)
-#define ccc_fqueue_start(q)     (((ccc_fqueue*)(q) - 1)->start)
 #define ccc_fqueue_length(q)    (((ccc_fqueue*)(q) - 1)->length)
+#define ccc_fqueue_start(q)     (((ccc_fqueue*)(q) - 1)->start)
 
 ccc_err ccc_fqueue_init(u64 elem_size, u64 capacity, void** out);
 void ccc_fqueue_fini(void* q);
