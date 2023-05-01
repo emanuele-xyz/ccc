@@ -2,6 +2,8 @@
 #include <ccc/alloc.h>
 
 /*
+	TODO: move in .h file 
+ 
 	fixed size queue
 
 	u64 elem_size: element size
@@ -36,6 +38,8 @@ void ccc_fqueue_fini(void* q)
 }
 
 /*
+	TODO: move in .h file
+
 	Suppose we have the following fqueue
 		elem_size: 8
 		capacity:  4
@@ -102,6 +106,8 @@ ccc_err ccc_fqueue_enqueue(void* q, void* v)
 }
 
 /*
+	TODO: move in .h file
+ 
 	Suppose we have the following fqueue
 		elem_size: 8
 		capacity:  4
