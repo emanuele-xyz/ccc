@@ -25,8 +25,33 @@ void test_fqueue(void)
 		printf("elem_size %llu - capacity %llu - start %llu - length %llu\n", elem_size, capacity, start, length);
 	}
 
-	#if 1
+	{
+		i32 v = 0;
+		err = ccc_fqueue_dequeue(q, &v);
+		printf("dequeuing ... %s\n", ccc_err_desc(err));
+	}
+
 	for (u64 i = 0; i < cap; i++)
+	{
+		i32 v = (i32)i;
+		err = ccc_fqueue_enqueue(q, &i);
+		printf("enqueuing %d ... %s\n", v, ccc_err_desc(err));
+
+		u64 elem_size = ccc_fqueue_elem_size(q);
+		u64 capacity = ccc_fqueue_capacity(q);
+		u64 start = ccc_fqueue_start(q);
+		u64 length = ccc_fqueue_length(q);
+		printf("elem_size %llu - capacity %llu - start %llu - length %llu\n", elem_size, capacity, start, length);
+	}
+
+	{
+		i32 v = (i32)(cap + 1);
+		err = ccc_fqueue_enqueue(q, &v);
+		printf("enqueuing %d ... %s\n", v, ccc_err_desc(err));
+	}
+
+	#if 0
+	for (u64 i = 0; i < cap / 2; i++)
 	{
 		i32 v = (i32)i;
 		err = ccc_fqueue_enqueue(q, &i);

@@ -50,7 +50,7 @@ ccc_err ccc_fqueue_enqueue(void* q, void* v)
 	return err;
 }
 
-void ccc_fqueue_dequeue(void* q, void* v)
+ccc_err ccc_fqueue_dequeue(void* q, void* v)
 {
 	ccc_err err = CCC_OK;
 	b8 res = CCC_T;

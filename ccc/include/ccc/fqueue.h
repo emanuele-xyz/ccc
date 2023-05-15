@@ -133,4 +133,4 @@ typedef struct ccc_fqueue
 ccc_err ccc_fqueue_init(u64 elem_size, u64 capacity, void** out);
 void ccc_fqueue_fini(void* q);
 ccc_err ccc_fqueue_enqueue(void* q, void* v);
-void ccc_fqueue_dequeue(void* q, void* v);
+ccc_err ccc_fqueue_dequeue(void* q, void* v);
