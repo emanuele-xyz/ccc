@@ -139,7 +139,7 @@ int main(void)
 	for (i32 i = 0; i < (i32)cap + 1; i++)
 	{
 		err = ccc_fstack_push(s, &i);
-		u64 size = ccc_fstack_size(s);
+		u64 size = ccc_fstack_elem_size(s);
 		u64 capacity = ccc_fstack_capacity(s);
 		u64 count = ccc_fstack_count(s);
 		printf("trying to push %d onto stack ... %s ... ", i, ccc_err_desc(err));
@@ -154,7 +154,7 @@ int main(void)
 			printf("peeking onto the stack ... ");
 			if (ccc_ok(err)) printf("%d ... ", a);
 			else printf("%s ... ", ccc_err_desc(err));
-			u64 size = ccc_fstack_size(s);
+			u64 size = ccc_fstack_elem_size(s);
 			u64 capacity = ccc_fstack_capacity(s);
 			u64 count = ccc_fstack_count(s);
 			printf("size:%llu - capacity:%llu - count:%llu\n", size, capacity, count);
@@ -164,7 +164,7 @@ int main(void)
 		{
 			i32 b = 0;
 			err = ccc_fstack_pop(s, &b);
-			u64 size = ccc_fstack_size(s);
+			u64 size = ccc_fstack_elem_size(s);
 			u64 capacity = ccc_fstack_capacity(s);
 			u64 count = ccc_fstack_count(s);
 			printf("popping stack ... ");
@@ -175,7 +175,7 @@ int main(void)
 	}
 
 	err = ccc_fstack_clear(s);
-	printf("stack_cleared ... %s ... size:%llu - capacity:%llu - count:%llu\n", ccc_err_desc(err), ccc_fstack_size(s), ccc_fstack_capacity(s), ccc_fstack_count(s));
+	printf("stack_cleared ... %s ... size:%llu - capacity:%llu - count:%llu\n", ccc_err_desc(err), ccc_fstack_elem_size(s), ccc_fstack_capacity(s), ccc_fstack_count(s));
 	ccc_fstack_fini(s);
 
 	{

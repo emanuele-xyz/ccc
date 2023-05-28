@@ -3,6 +3,8 @@
 #include <ccc/types.h>
 #include <ccc/errors.h>
 
+// TODO: implement ccc_fqueue_clear()
+
 /*
 	fixed size queue
 
