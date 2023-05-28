@@ -4,6 +4,8 @@
 #include <ccc/errors.h>
 
 /*
+	fixed size queue
+
 	u64 elem_size: size of element in bytes
 	u64 capacity:  maximum number of elements
 	u64 start:     index to the first element in the queue
