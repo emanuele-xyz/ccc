@@ -4,26 +4,26 @@
 #include <ccc/errors.h>
 
 /*
-    fixed size stack
+	fixed size stack
 
-    u64 size:     element size
-    u64 capacity: maximum number of elements
-    u64 count:    current number of elements
+	u64 size:     element size
+	u64 capacity: maximum number of elements
+	u64 count:    current number of elements
 
-            returned pointer -+
-                              |
-                              V
-    +------+----------+-------+-----+
-    | size | capacity | count | ... |
-    +------+----------+-------+-----+
+							 ptr
+							  |
+							  V
+	+------+----------+-------+-----+
+	| size | capacity | count | ... |
+	+------+----------+-------+-----+
 */
 
 typedef enum fstack_field
 {
-    CCC_FSTACK_SIZE,
-    CCC_FSTACK_CAPACITY,
-    CCC_FSTACK_COUNT,
-    CCC_FSTACK_DATA,
+	CCC_FSTACK_SIZE,
+	CCC_FSTACK_CAPACITY,
+	CCC_FSTACK_COUNT,
+	CCC_FSTACK_DATA,
 } fstack_field;
 
 #define ccc_fstack_size(s)     (((u64*)(s) - CCC_FSTACK_DATA)[CCC_FSTACK_SIZE])

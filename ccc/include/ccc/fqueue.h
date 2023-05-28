@@ -1,17 +1,7 @@
 #pragma once
 
-#include <ccc/fqueue.h>
 #include <ccc/types.h>
 #include <ccc/errors.h>
-
-/*
-	fixed size queue
-
-	u64 elem_size: element size
-	u64 capacity:  maximum number of elements
-	u64 start:     queue's starting index
-	u64 length:    queue's length
-*/
 
 /*
 	Suppose we have the following fqueue
