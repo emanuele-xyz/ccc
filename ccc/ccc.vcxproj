@@ -94,6 +94,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\list.c" />
     <ClCompile Include="src\errors.c" />
     <ClCompile Include="src\fqueue.c" />
     <ClCompile Include="src\log.c" />
@@ -109,6 +110,7 @@
     <ClInclude Include="include\ccc\errors_asserts.h" />
     <ClInclude Include="include\ccc\fqueue.h" />
     <ClInclude Include="include\ccc\fstack.h" />
+    <ClInclude Include="include\ccc\list.h" />
     <ClInclude Include="include\ccc\log.h" />
     <ClInclude Include="include\ccc\min_max.h" />
     <ClInclude Include="include\ccc\types.h" />
