@@ -2,7 +2,7 @@
 
 #include <string.h>
 
-void ccc_memset(void* dst, u64 size, b8 val)
+void ccc_memset(void* dst, u64 size, u8 val)
 {
 	memset(dst, val, size);
 }

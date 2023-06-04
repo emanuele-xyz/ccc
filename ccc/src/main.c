@@ -162,6 +162,9 @@ void test_fvec(void)
 		}
 	}
 
+	ccc_fvec_clear(v);
+	printf("fvec cleared - "); print_fvec_fields(v); putchar('\n');
+
 	{
 		for (u64 i = 0; i < capacity / 2; i++)
 		{
@@ -176,8 +179,6 @@ void test_fvec(void)
 			err = ccc_fvec_insert(v, i, &x);
 			printf("fvec insert - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
 		}
-
-		int kek;
 	}
 
 	printf("fvec finalizing - "); print_fvec_fields(v); putchar('\n');

@@ -1,5 +1,6 @@
 #include <ccc/fvec.h>
 #include <ccc/alloc.h>
+#include <ccc/memory.h>
 
 ccc_err ccc_fvec_init(u64 elem_size, u64 capacity, void** out)
 {
@@ -53,7 +54,6 @@ ccc_err ccc_fvec_remove(void* v, void* x)
 	b8 res = CCC_T;
 
 	u64 elem_size = ccc_fvec_elem_size(v);
-	u64 capacity = ccc_fvec_capacity(v);
 	u64 length = ccc_fvec_length(v);
 	err = ccc_invariant(length > 0);
 	res = res && ccc_ok(err);
@@ -84,8 +84,6 @@ ccc_err ccc_fvec_insert(void* v, u64 at, void* x)
 	}
 	if (res)
 	{
-		// TODO: fix bug, there is something wrong with the shifting
-
 		// shift
 		for (u64 i = 0; i < (length - at) * elem_size; i++)
 		{
@@ -104,9 +102,10 @@ ccc_err ccc_fvec_insert(void* v, u64 at, void* x)
 
 void ccc_fvec_clear(void* v)
 {
-	#define CCC_FVEC_ZERO_CLEAR
 	#ifdef CCC_FVEC_ZERO_CLEAR
-	ccc_memzero(); // TODO: to be implemented
+	u64 elem_size = ccc_fvec_elem_size(v);
+	u64 capacity = ccc_fvec_capacity(v);
+	ccc_memzero(v, elem_size * capacity);
 	#else
 	ccc_fvec_length(v) = 0;
 	#endif // CCC_FVEC_ZERO_CLEAR

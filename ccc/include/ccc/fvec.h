@@ -5,6 +5,12 @@
 
 /*
 	Fixed size vector
+
+	Compile using
+	
+		#define CCC_FVEC_ZERO_CLEAR
+	
+	to set all data to zero when calling ccc_fvec_clean
 */
 
 typedef struct ccc_fvec
