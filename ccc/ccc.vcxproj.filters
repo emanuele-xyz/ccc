@@ -36,6 +36,9 @@
     <ClCompile Include="src\list.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\fvec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ccc\alloc.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\ccc\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ccc\fvec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

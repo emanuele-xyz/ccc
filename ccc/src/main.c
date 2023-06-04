@@ -6,6 +6,7 @@
 #include <ccc/alloc.h>
 #include <ccc/fstack.h>
 #include <ccc/fqueue.h>
+#include <ccc/fvec.h>
 #include <ccc/min_max.h>
 #include <ccc/clamp.h>
 
@@ -123,6 +124,30 @@ void test_fqueue(void)
 	}
 }
 
+void print_fvec_fields(void* v)
+{
+	u64 elem_size = ccc_fvec_elem_size(v);
+	u64 capacity = ccc_fvec_capacity(v);
+	u64 length = ccc_fvec_length(v);
+
+	printf("elem_size: %llu, capacity: %llu, length: %llu", elem_size, capacity, length);
+}
+
+void test_fvec(void)
+{
+	puts("######################################## fvec ########################################");
+
+	u64 capacity = 8;
+	i32* v = 0;
+	ccc_fvec_init(sizeof(*v), 8, &v);
+	printf("fvec initialized - "); print_fvec_fields(v); putchar('\n');
+
+	printf("fvec finalizing - "); print_fvec_fields(v); putchar('\n');
+	ccc_fvec_fini(v);
+
+	puts("######################################################################################");
+}
+
 int main(void)
 {
 	ccc_check_for_leaks_on_exit();
@@ -192,6 +217,7 @@ int main(void)
 	}
 
 	test_fqueue();
+	test_fvec();
 
 	return 0;
 }
