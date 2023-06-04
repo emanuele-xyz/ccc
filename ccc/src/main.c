@@ -162,6 +162,24 @@ void test_fvec(void)
 		}
 	}
 
+	{
+		for (u64 i = 0; i < capacity / 2; i++)
+		{
+			i32 x = (i32)i;
+			err = ccc_fvec_add(v, &x);
+			printf("fvec add - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+		}
+
+		for (u64 i = 0; i < capacity / 2; i++)
+		{
+			i32 x = (i32)capacity;
+			err = ccc_fvec_insert(v, i, &x);
+			printf("fvec insert - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+		}
+
+		int kek;
+	}
+
 	printf("fvec finalizing - "); print_fvec_fields(v); putchar('\n');
 	ccc_fvec_fini(v);
 

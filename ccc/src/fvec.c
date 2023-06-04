@@ -39,7 +39,7 @@ ccc_err ccc_fvec_add(void* v, void* x)
 	{
 		for (u64 i = 0; i < elem_size; i++)
 		{
-			((char*)(v))[length + i] = ((char*)(x))[i];
+			((char*)(v))[length * elem_size + i] = ((char*)(x))[i];
 		}
 		ccc_fvec_length(v)++;
 	}
@@ -61,9 +61,42 @@ ccc_err ccc_fvec_remove(void* v, void* x)
 	{
 		for (u64 i = 0; i < elem_size; i++)
 		{
-			((char*)(x))[i] = ((char*)(v))[(length - 1) + i];
+			((char*)(x))[i] = ((char*)(v))[(length - 1) * elem_size + i];
 		}
 		ccc_fvec_length(v)--;
+	}
+
+	return err;
+}
+
+ccc_err ccc_fvec_insert(void* v, u64 at, void* x)
+{
+	ccc_err err = CCC_OK;
+	b8 res = CCC_T;
+
+	u64 elem_size = ccc_fvec_elem_size(v);
+	u64 capacity = ccc_fvec_capacity(v);
+	u64 length = ccc_fvec_length(v);
+	{
+		ccc_err err1 = ccc_invariant(length < capacity);
+		ccc_err err2 = ccc_invariant(at < length);
+		res = res && ccc_ok(err) && ccc_ok(err1) && ccc_ok(err2);
+	}
+	if (res)
+	{
+		// TODO: fix bug, there is something wrong with the shifting
+
+		// shift
+		for (u64 i = 0; i < (length - at) * elem_size; i++)
+		{
+			((char*)(v))[(length + 1) * elem_size - 1 - i] = ((char*)(v))[length * elem_size - 1 - i];
+		}
+		// copy
+		for (u64 i = 0; i < elem_size; i++)
+		{
+			((char*)(v))[at * elem_size + i] = ((char*)(x))[i];
+		}
+		ccc_fvec_length(v)++;
 	}
 
 	return err;
