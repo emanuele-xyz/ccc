@@ -148,8 +148,8 @@ void test_fvec(void)
 		for (u64 i = 0; i < capacity + 1; i++)
 		{
 			i32 x = (i32)i;
-			err = ccc_fvec_append(v, &x);
-			printf("fvec append - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+			err = ccc_fvec_add(v, &x);
+			printf("fvec add - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
 		}
 	}
 

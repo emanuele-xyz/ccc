@@ -25,7 +25,7 @@ void ccc_fvec_fini(void* v)
 	ccc_free((ccc_fvec*)(v)-1);
 }
 
-ccc_err ccc_fvec_append(void* v, void* elem)
+ccc_err ccc_fvec_add(void* v, void* elem)
 {
 	ccc_err err = CCC_OK;
 	b8 res = CCC_T;
