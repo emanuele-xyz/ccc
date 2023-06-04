@@ -137,10 +137,21 @@ void test_fvec(void)
 {
 	puts("######################################## fvec ########################################");
 
+	ccc_err err = CCC_OK;
 	u64 capacity = 8;
 	i32* v = 0;
-	ccc_fvec_init(sizeof(*v), 8, &v);
-	printf("fvec initialized - "); print_fvec_fields(v); putchar('\n');
+
+	err = ccc_fvec_init(sizeof(*v), 8, &v);
+	printf("fvec initialized - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+
+	{
+		for (u64 i = 0; i < capacity + 1; i++)
+		{
+			i32 x = (i32)i;
+			err = ccc_fvec_append(v, &x);
+			printf("fvec append - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+		}
+	}
 
 	printf("fvec finalizing - "); print_fvec_fields(v); putchar('\n');
 	ccc_fvec_fini(v);

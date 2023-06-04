@@ -24,3 +24,25 @@ void ccc_fvec_fini(void* v)
 {
 	ccc_free((ccc_fvec*)(v)-1);
 }
+
+ccc_err ccc_fvec_append(void* v, void* elem)
+{
+	ccc_err err = CCC_OK;
+	b8 res = CCC_T;
+
+	u64 elem_size = ccc_fvec_elem_size(v);
+	u64 capacity = ccc_fvec_capacity(v);
+	u64 length = ccc_fvec_length(v);
+	err = ccc_invariant(length < capacity);
+	res = res && ccc_ok(err);
+	if (res)
+	{
+		for (u64 i = 0; i < elem_size; i++)
+		{
+			((char*)(v))[length + i] = ((char*)(elem))[i];
+		}
+		ccc_fvec_length(v)++;
+	}
+
+	return err;
+}
