@@ -153,6 +153,15 @@ void test_fvec(void)
 		}
 	}
 
+	{
+		for (u64 i = 0; i < capacity + 1; i++)
+		{
+			i32 x = 0;
+			err = ccc_fvec_remove(v, &x);
+			printf("fvec remove - %s - ", ccc_err_desc(err)); print_fvec_fields(v); putchar('\n');
+		}
+	}
+
 	printf("fvec finalizing - "); print_fvec_fields(v); putchar('\n');
 	ccc_fvec_fini(v);
 

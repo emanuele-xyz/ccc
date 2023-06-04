@@ -20,4 +20,5 @@ typedef struct ccc_fvec
 
 ccc_err ccc_fvec_init(u64 elem_size, u64 capacity, void** out);
 void ccc_fvec_fini(void* v);
-ccc_err ccc_fvec_add(void* v, void* elem);
+ccc_err ccc_fvec_add(void* v, void* x);
+ccc_err ccc_fvec_remove(void* v, void* x);
