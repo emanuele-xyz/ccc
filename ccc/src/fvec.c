@@ -101,3 +101,13 @@ ccc_err ccc_fvec_insert(void* v, u64 at, void* x)
 
 	return err;
 }
+
+void ccc_fvec_clear(void* v)
+{
+	#define CCC_FVEC_ZERO_CLEAR
+	#ifdef CCC_FVEC_ZERO_CLEAR
+	ccc_memzero(); // TODO: to be implemented
+	#else
+	ccc_fvec_length(v) = 0;
+	#endif // CCC_FVEC_ZERO_CLEAR
+}

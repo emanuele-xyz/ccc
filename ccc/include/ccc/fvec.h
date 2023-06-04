@@ -23,3 +23,4 @@ void ccc_fvec_fini(void* v);
 ccc_err ccc_fvec_add(void* v, void* x);
 ccc_err ccc_fvec_remove(void* v, void* x);
 ccc_err ccc_fvec_insert(void* v, u64 at, void* x);
+void ccc_fvec_clear(void* v);
