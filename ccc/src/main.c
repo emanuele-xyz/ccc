@@ -9,6 +9,7 @@
 #include <ccc/fvec.h>
 #include <ccc/min_max.h>
 #include <ccc/clamp.h>
+#include <ccc/hash.h>
 
 void test_fqueue(void)
 {
@@ -187,6 +188,11 @@ void test_fvec(void)
 	puts("######################################################################################");
 }
 
+void test_hash(void)
+{
+	// TODO: to be implemented
+}
+
 int main(void)
 {
 	ccc_check_for_leaks_on_exit();
@@ -257,6 +263,7 @@ int main(void)
 
 	test_fqueue();
 	test_fvec();
+	test_hash();
 
 	return 0;
 }

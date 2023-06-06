@@ -95,6 +95,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\fvec.c" />
+    <ClCompile Include="src\hash.c" />
     <ClCompile Include="src\list.c" />
     <ClCompile Include="src\errors.c" />
     <ClCompile Include="src\fqueue.c" />
@@ -113,6 +114,7 @@
     <ClInclude Include="include\ccc\fqueue.h" />
     <ClInclude Include="include\ccc\fstack.h" />
     <ClInclude Include="include\ccc\fvec.h" />
+    <ClInclude Include="include\ccc\hash.h" />
     <ClInclude Include="include\ccc\list.h" />
     <ClInclude Include="include\ccc\log.h" />
     <ClInclude Include="include\ccc\memory.h" />

@@ -22,16 +22,16 @@ for once.
 * Assert 
 * Crash
 * Error codes
+* Hashing
 * Fixed size stack
 * Fixed size queue
+* Fixed size vector
 
 ## TODO
 
 * Strings
-* Hashing
 * Linked lists
 * Hash tables
 * Binary trees
 * Thread Array
 * Pool
-

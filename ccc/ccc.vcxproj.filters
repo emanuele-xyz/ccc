@@ -42,6 +42,9 @@
     <ClCompile Include="src\memory.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ccc\alloc.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\ccc\memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ccc\hash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
